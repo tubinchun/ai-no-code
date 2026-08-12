@@ -3,22 +3,43 @@
 *.jar
 *.war
 target/
+!target/*.jar
 
 # IDE
 .idea/
 *.iml
 .vscode/
+.settings/
+.project
+.classpath
+.factorypath
 
 # OS
 Thumbs.db
 .DS_Store
+ehthumbs.db
+Desktop.ini
 
 # Node
 node_modules/
 dist/
+*.local
 
 # Logs
 *.log
+logs/
 
 # Environment
 .env.local
+.env.*.local
+
+# Build output
+build/
+out/
+
+# Package
+*.tgz
+*.zip
+
+# MinIO data
+data/

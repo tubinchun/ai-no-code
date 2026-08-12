@@ -1,0 +1,59 @@
+# 线上配置文件
+spring:
+  # mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.136.9.247:13306/langchain4j
+    username: root
+    password: root
+  # redis
+  data:
+    redis:
+      host: 8.136.9.247
+      port: 6379
+      database: 0
+      password: 123456
+      ttl: 3600
+# AI
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: https://api.deepseek.com
+      api-key: sk-fa9f9356fa6f408abc54759414792147
+      model-name: deepseek-chat
+      max-tokens: 8192
+      log-requests: false
+      log-responses: false
+    streaming-chat-model:
+      base-url: https://api.deepseek.com
+      api-key: sk-fa9f9356fa6f408abc54759414792147
+      model-name: deepseek-chat
+      max-tokens: 8192
+      log-requests: false
+      log-responses: false
+    # 推理 AI 模型配置（用于复杂的推理任务）
+    reasoning-streaming-chat-model:
+      base-url: https://api.deepseek.com
+      api-key: sk-fa9f9356fa6f408abc54759414792147
+      model-name: deepseek-chat
+      max-tokens: 8192
+      temperature: 0.1
+      log-requests: false
+      log-responses: false
+    # 智能路由 AI 模型配置
+    routing-chat-model:
+      base-url: https://api.deepseek.com
+      api-key: sk-fa9f9356fa6f408abc54759414792147
+      model-name: deepseek-chat
+      max-tokens: 100
+      log-requests: false
+      log-responses: false
+# 接口文档配置
+knife4j:
+  basic:
+    enable: true
+    username: root
+    password: 123456
+# 部署路径
+code:
+  deploy-host: http://8.136.9.247/dist

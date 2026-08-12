@@ -1,0 +1,43 @@
+spring:
+  data:
+    redis:
+      host: 8.136.9.247
+      port: 6379
+      password: 123456
+      ttl: 3600
+  application:
+    name: ai-code-backend
+  # mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.136.9.247:13306/langchain4j
+    username: root
+    password: root
+  profiles:
+    active: local
+
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+
+# springdoc-openapi
+springdoc:
+  group-configs:
+    - group: 'default'
+      packages-to-scan: com.lzf.langchain4j
+# knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+mybatis-flex:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+minio:
+  endpoint: http://8.136.9.247:9000
+  public-endpoint: http://8.136.9.247:9000
+  access-key: minioadmin
+  secret-key: minioadmin
+  bucket-name: langchain4j
